@@ -10,7 +10,7 @@ using namespace std;
   // replace the string literal with a full path name to the directory,
   // e.g., "Z:/CS32/MarbleMadness/Assets" or "/Users/fred/cs32/MarbleMadness/Assets"
 
-const string assetDirectory = "/Users/jjeoung/Downloads/MarbleMadness-15/Assets";
+const string assetDirectory = "/Users/jjeoung/Downloads/MarbleMadness-16/Assets";
 const int msPerTick = 10;  // 10ms per tick; increase this if game moves too fast
 
 #ifdef _MSC_VER
@@ -46,16 +46,16 @@ int main(int argc, char* argv[])
         assetPath += '/';
     }
     {
-		const string someAsset = "pit.tga";
-		ifstream ifs(assetPath + someAsset);
-		if (!ifs)
-		{
-			cout << "Cannot find " << someAsset << " in ";
-			cout << (assetDirectory.empty() ? "current directory" : assetDirectory) << endl;
-			return 1;
-		}
-	}
+        const string someAsset = "pit.tga";
+        ifstream ifs(assetPath + someAsset);
+        if (!ifs)
+        {
+            cout << "Cannot find " << someAsset << " in ";
+            cout << (assetDirectory.empty() ? "current directory" : assetDirectory) << endl;
+            return 1;
+        }
+    }
 
-	GameWorld* gw = createStudentWorld(assetPath);
-	Game().run(argc, argv, gw, "Marble Madness", msPerTick);
+    GameWorld* gw = createStudentWorld(assetPath);
+    Game().run(argc, argv, gw, "Marble Madness", msPerTick);
 }
